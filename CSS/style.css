@@ -80,7 +80,7 @@ h1{
 }
 
 .txt-box.active {
-    background: rgb(19, 0, 128);
+    background: rgb(128, 0, 6);
     transform:translateX(-110px) rotate(180deg);
 }
 /* .txt-box:hover {
