@@ -1,16 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap'); 
 :root{
-    --blue : rgb(21, 87, 161) ; /* on cole les éléments .window.blue car blue n'est pas un enfant de window !! */
+    --blue : rgb(21, 87, 161) ; 
     --yellow : rgb(255, 255, 0);
     --green: rgb(90, 180, 30);
     --red: rgb(215, 53, 50);
     --cyan: rgb(0, 255, 242);
     
 }
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Mountains of Christmas', cursive;
+    
+}
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: red;
+    font-size: 80px;
+    
 }
 #container{
     display: flex;
@@ -48,16 +59,17 @@
     width: 100%;
     z-index: 2; /* le Z-Index permet de donner des "priorité" des superposition, la plus faible = en dessous ; la plus forte = au dessus */
     transition: 1s;
+    
 }
 .window .txt-box span {
     color:white;
-    font-size: 40px;
+    font-size: 65px;
 }
 .txt-box.blue { background: var(--blue);} /* on cole les éléments .txt-box.blue car blue n'est pas un enfant de txt.txt-box !! */
 .txt-box.yellow {background: var(--yellow);}
 .txt-box.green { background: var(--green);}
 .txt-box.red {background: var(--red);}
-.txt-box.cyan {background:var (--cyan);}
+.txt-box.cyan {background: var(--cyan);}
 
 .img-box {
     z-index: 1;
@@ -67,6 +79,10 @@
     width: 100%;
 }
 
-.txt-box:hover {
-    opacity: 0;
+.txt-box.active {
+    background: rgb(19, 0, 128);
+    transform:translateX(-110px) rotate(180deg);
 }
+/* .txt-box:hover {
+    opacity: 0;
+} */
