@@ -1,0 +1,72 @@
+:root{
+    --blue : rgb(21, 87, 161) ; /* on cole les éléments .window.blue car blue n'est pas un enfant de window !! */
+    --yellow : rgb(255, 255, 0);
+    --green: rgb(90, 180, 30);
+    --red: rgb(215, 53, 50);
+    --cyan: rgb(0, 255, 242);
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container{
+    display: flex;
+    min-height:100vh; /* v= view port h= height -> mon container prend 100% de la fenetre */
+    align-items: center; /* horizontalement centré */
+    justify-content: center; /* verticalement centré */
+    background: rgb(0, 0, 0);
+}
+#calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 960px;
+}
+
+.window{
+    position: relative; /* un élément Relative doit l'être PAR RAPPORT a un autre élément (ici le .txt box qui est Absolute" */
+    width: 150px; /*w150*/
+    height: 150px; /*h150*/
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 5px;
+    overflow: hidden; /* tout ce qui dépasse de l'élément window est caché donc l'image sera rogné a la taille de la window */
+}
+.txt-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2; /* le Z-Index permet de donner des "priorité" des superposition, la plus faible = en dessous ; la plus forte = au dessus */
+    transition: 1s;
+}
+.window .txt-box span {
+    color:white;
+    font-size: 40px;
+}
+.txt-box.blue { background: var(--blue);} /* on cole les éléments .txt-box.blue car blue n'est pas un enfant de txt.txt-box !! */
+.txt-box.yellow {background: var(--yellow);}
+.txt-box.green { background: var(--green);}
+.txt-box.red {background: var(--red);}
+.txt-box.cyan {background:var (--cyan);}
+
+.img-box {
+    z-index: 1;
+}
+.img-box img {
+    display: block;
+    width: 100%;
+}
+
+.txt-box:hover {
+    opacity: 0;
+}
